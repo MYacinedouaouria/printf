@@ -25,14 +25,14 @@ char	*action_c(va_list args, char *buffer)
  *@buffer:a pointer to char
  *Return:a pointer to char
  */
-char	*action_s(va_list args, char *buffer)
+char *action_s(va_list args, char *buffer)
 {
 	char *str;
 
 	str = va_arg(args, char *);
-	if ((buffer == NULL) || (str == NULL))
+	if (str == NULL)
 	{
-		return (NULL);
+		return (_addstring(buffer, "(null)"));
 	}
 	return (_addstring(buffer, str));
 }
