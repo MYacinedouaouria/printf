@@ -4,7 +4,7 @@
  *@s:a char
  *Return:a pointer to a function
  */
-char (get_action_specifier(char s))(va_list args, char *buffer)
+char	*(*get_action_specifier(char s))(va_list args, char *buffer)
 {
 	specifier specifiers[] = {
 		{'c', action_c},
