@@ -34,9 +34,8 @@ int	_printf(const char *format, ...)
 				action = get_action_specifier(format[i]);
 				if (action == NULL)
 				{
-					_putstring("error enter a valid specifier");
-					free_vars(buffer, args);
-					exit(0);
+					buffer = _addchar(buffer, '%');
+					i++;
 				}
 				buffer = action(args, buffer);
 				i++;
